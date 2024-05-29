@@ -1,16 +1,22 @@
-export const updateCart = () => {
-  let itemCount = 0;
-  let localStorageItemsForCount = JSON.parse(
-    localStorage.getItem("cartProductLS")
-  );
+const cartValue = document.querySelector("#cartValue");
 
-  localStorageItemsForCount.map((item) => {
-    itemCount += 1;
-  });
+export const updateCart = (cartProducts) => {
+  // let itemCount = 0;
+  // let localStorageItemsForCount = JSON.parse(
+  //   localStorage.getItem("cartProductLS")
+  // );
+  // localStorageItemsForCount.map((item) => {
 
-  console.log(itemCount);
+  //   itemCount += 1;
+  // });
 
-  const cartItemCount = document.querySelector(".navbar");
+  // console.log(itemCount);
 
-  cartItemCount.querySelector(".fa-cart-shopping").innerHTML = itemCount;
+  // const cartItemCount = document.querySelector(".navbar");
+
+  // cartItemCount.querySelector(".fa-cart-shopping").innerHTML = itemCount;
+
+  return (
+    cartValue.innerHTML = `<i class="fa-solid fa-cart-shopping"> ${cartProducts.length} </i>`
+  )
 };
